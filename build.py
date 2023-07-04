@@ -114,8 +114,10 @@ def get_paper_entry(entry_key, entry):
         s += f"""<a href="{entry.fields['html']}" target="_blank">{entry.fields['title']}</a> <br>"""
 
     s += f"""{generate_person_html(entry.persons['author'])} <br>"""
-    s += f"""<span style="font-style: italic;">{entry.fields['booktitle']}</span>, {entry.fields['year']} <br>"""
-
+    if 'booktitle' in entry.fields.keys():
+   	 s += f"""<span style="font-style: italic;">{entry.fields['booktitle']}</span>, {entry.fields['year']} <br>"""
+    else:
+   	 s += f"""<span style="font-style: italic;">{entry.fields['journal']}</span>, {entry.fields['year']} <br>"""
     artefacts = {'html': 'Project Page', 'pdf': 'Paper', 'supp': 'Supplemental', 'video': 'Video', 'poster': 'Poster', 'code': 'Code'}
     i = 0
     for (k, v) in artefacts.items():
@@ -129,8 +131,12 @@ def get_paper_entry(entry_key, entry):
 
     cite = "<pre><code>@InProceedings{" + f"{entry_key}, \n"
     cite += "\tauthor = {" + f"{generate_person_html(entry.persons['author'], make_bold=False, add_links=False, connection=' and ')}" + "}, \n"
-    for entr in ['title', 'booktitle', 'year']:
-        cite += f"\t{entr} = " + "{" + f"{entry.fields[entr]}" + "}, \n"
+    cite += f"\t{'title'} = " + "{" + f"{entry.fields['title']}" + "}, \n"
+    if 'booktitle' in entry.fields.keys():
+    	cite += f"\t{'booktitle'} = " + "{" + f"{entry.fields['booktitle']}" + "}, \n"
+    else:
+    	cite += f"\t{'journal'} = " + "{" + f"{entry.fields['journal']}" + "}, \n"
+    cite += f"\t{'year'} = " + "{" + f"{entry.fields['year']}" + "}, \n"
     cite += """}</pre></code>"""
     s += " /" + f"""<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{entry_key}" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapse{entry_key}"><div class="card card-body">{cite}</div></div>"""
     s += """ </div> </div> </div>"""
