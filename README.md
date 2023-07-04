@@ -13,4 +13,4 @@ This repository contains the python script to generate [my homepage](https://m-n
 
 ## Credits
 
-The overall design and open-sourcing the script is inspired by [Jon Barron's awesome template](https://jonbarron.info/) and some functionality is inspired by [Andreas Geiger's cool website](https://cvlibs.net)!
+The overall design is taken from by [Michael Niemeyer's  template](https://github.com/m-niemeyer).
