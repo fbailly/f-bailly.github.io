@@ -14,8 +14,10 @@ def get_personal_data():
                     In 2015, I graduated from <a href="https://ens-paris-saclay.fr/" target="_blank">École Normale Supérieure Paris-Saclay</a> in Computer Science and Applied Mathematics. 
                 </p>
                 <p>
-                    <span style="font-weight: bold;">On-going projects>
-                    Since 2022 I am part of the FLAG-ERA JCT 2021 Rescuegraph project.
+                    <span style="font-weight: bold;">On-going projects:</span>
+                    In 2023, I have been awarded an ANR JCJC grant for the B-IRD project, on fast and reliable biomechanical methods dedicated to assistive technologies.
+                    Since 2023 I am part of the european EIC Pathfinder AI-HAND project led by INRIA on implanted neuroprosthese for hand movement restoration.
+                    Since 2022 I am part of the FLAG-ERA JCT 2021 <a href="https://rescue-graph.com/" target="_blank">Rescuegraph</a> project led by <a href="https://www.uab.cat/" target="_blank">UAB</a> on functional stimulation system using graphene-based nerve electrodes.
                 </p>
                 <p>For any inquiries, feel free to reach out to me via mail!</p>
                 <p>
